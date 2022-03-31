@@ -19,7 +19,7 @@ function App() {
       <Route path='/inventory' element={<Inventory></Inventory>}></Route>
 
      </Routes>
-     <Shop></Shop>
+     {/* <Shop></Shop> */}
     </div>
   );
 }
