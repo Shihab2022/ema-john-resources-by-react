@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useCards from '../../Hooks/useCarts';
 import useProducts from '../../Hooks/useProducts';
 import { removeFromDb } from '../../utilities/fakedb';
 import Card from '../Card/Card';
 import ReviewItem from '../ReviewItem/ReviewItem';
+import './Orders.css'
 
 const Orders = () => {
             const [products,setProducts]=useProducts()
@@ -27,7 +29,11 @@ const Orders = () => {
                         </div> 
                         <div className="cart-Summary">
 
-                        <Card cart={cart}></Card>
+                        <Card cart={cart}>
+                            <Link to='/inventory'>
+                                <button className='proceedCheckout'>Proceed Checkout</button>
+                            </Link>
+                        </Card>
                         </div>
                             
                 </div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import './Card.css'
-const Card = ({cart}) => {
+const Card = (props) => {
+    const {cart}=props;
     // console.log(cart)
     // cart.map(data =>)
-
+    // {cart,...props}
+// console.log(props.children)
 let total=0;
 let shipping=0
     for(const data of cart){
@@ -23,6 +25,9 @@ let shipping=0
                <p>Total Shipping Charge: ${shipping}</p>
                <p>Tax: ${tax}</p>
                <h3>Grand Total: ${grandTotal}</h3>
+               {
+                   props.children
+               }
         </div>
     );
 };
