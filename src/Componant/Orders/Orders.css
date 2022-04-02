@@ -3,15 +3,15 @@
 }
 
 .proceedCheckout{
-    padding:8px 15px;
-    background-color:orange;
+    padding:12px 15px;
+    background-color:#FF9900;
     border:none;
     font-size:15px;
-    border-radius: 20px;
+    border-radius: 5px;
     color:white;
-    transition:1s;
+    transition:1.5s;
 }
 .proceedCheckout:hover{
     background-color:white;
-    color:orange;
+    color:#FF9900;
 }

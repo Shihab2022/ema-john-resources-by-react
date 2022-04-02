@@ -2,14 +2,20 @@ import React, {} from 'react';
 import Card from '../Card/Card';
 import Product from '../Product/Product';
 import './Shop.css'
-import { addToDb } from '../../utilities/fakedb'
+import { addToDb, removeFromDb } from '../../utilities/fakedb'
 import useProducts from '../../Hooks/useProducts';
 import useCards from '../../Hooks/useCarts';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 const Shop = () => {
 
     // make defoult hook in modile 53-4 and use
     const [products,setProducts]=useProducts()
  const [cart,setCart]= useCards(products)
+ const clearAll=() =>{
+   setCart([])
+ }
 
 //akoi code bar bar onak jai gai use korty shoby tai akta defoult fun ay raykay takay bivinno componant thaykay  call koary use korbo
 
@@ -57,7 +63,18 @@ const Shop = () => {
              }           
              </div> 
              <div className="cart-Summary">
-              <Card cart={cart}></Card>
+              <Card cart={cart}>
+
+                <Link to='/shop'>
+                <button onClick={clearAll} className="proceedCheckout clear-btn">Clear Cart<FontAwesomeIcon className='clear-btn-icon' icon={faTrashAlt} ></FontAwesomeIcon></button>
+                </Link>
+                <br />
+                <Link to='/orders'> 
+                <button className="proceedCheckout">Review Order <FontAwesomeIcon className='arrow-icon' icon={faArrowRight} ></FontAwesomeIcon></button>
+                
+                </Link>
+
+              </Card>
                 
              </div>
         </div>

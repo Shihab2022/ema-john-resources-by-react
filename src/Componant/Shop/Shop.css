@@ -14,3 +14,15 @@
 
    
 }
+.clear-btn{
+   margin-bottom:15px;
+   background-color:#FF3030;
+   padding:10px 30px;
+}
+.clear-btn-icon{
+    margin-left:10px;
+}
+.arrow-icon{
+    margin-left:10px;
+    font-size:18px;
+}
